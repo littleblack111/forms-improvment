@@ -4,7 +4,7 @@
   "description": "something made with google sheet(db) and google app script(website)",
   "main": "index.js",
   "scripts": {
-    "sync": "clasp push",
+    "sync": "git add -A && git commit -am 'updates' & clasp push",
     "watch": "clasp push -w"
   },
   "repository": "https://github.com/littleblack111/forms-improvment.git",
