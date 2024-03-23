@@ -1,0 +1,13 @@
+{
+  "name": "forms-improvment",
+  "version": "1.0.0",
+  "description": "something made with google sheet(db) and google app script(website)",
+  "main": "index.js",
+  "scripts": {
+    "sync": "clasp push",
+    "watch": "clasp push -w"
+  },
+  "repository": "https://github.com/littleblack111/forms-improvment.git",
+  "author": "littleblack111",
+  "license": "GPL"
+}
