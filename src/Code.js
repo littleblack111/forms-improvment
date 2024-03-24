@@ -1,4 +1,4 @@
-function main() {
+function getUserFeedback() {
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
     const reply = spreadsheet.getSheetByName('Reply'); // Get the sheet named "Reply"
     const feedback = spreadsheet.getSheetByName('Feedback'); // Get the sheet named "Reply"
@@ -15,13 +15,9 @@ function main() {
             reply_data[i].shift();
             reply_data[i].shift();
             data = reply_data[i];
-            console.log(data);
-            console.log(feedback_data);
             for (let j = 0; j < data.length; j++) {
                 for (let k = 0; k < feedback_data[j].length; k+=2) {
                     if (data[j] == feedback_data[j][k]) {
-                        console.log(j, k);
-                        console.log(feedback_data[j][k + 1]);
                         result.push(feedback_data[j][k + 1]);
                         break; // Assuming there's only one match, we can break the loop once found
                     }
@@ -29,5 +25,9 @@ function main() {
             }
         }
     }
-    console.log(result);
+    return result;
+}
+
+function doGet() {
+    return HtmlService.createHtmlOutputFromFile('index');
 }

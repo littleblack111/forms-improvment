@@ -2,8 +2,18 @@
 <html>
   <head>
     <base target="_top">
+    <script defer>
+      console.log("test");
+      function onSuccess(feedback) {
+        var output = document.getElementById("output");
+        output.innerHTML = feedback.join("<br>");
+      }
+      google.script.run.withSuccessHandler(onSuccess).getUserFeedback();
+    </script>
   </head>
   <body>
-    
+    <h1>Working!</h1>
+    <h1>checkout these:</h1>
+    <p id="output"></p>
   </body>
 </html>
